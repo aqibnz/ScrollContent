@@ -22,9 +22,8 @@ body{
 }
 .wrapper::after{
   content: "Created By Aqib Khan";
-  /* height: calc(100vh - 200px); */
   height: 100vh;
-  background:  #0005;
+  background:  #141d6ccc;
   position: fixed;
   width: 100%;
   top: 0;
