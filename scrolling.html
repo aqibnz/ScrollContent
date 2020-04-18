@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="review.png" type="review.png" sizes="12x12">
+  <link rel="stylesheet" href="style.css">
+  <title>Scrolling</title>
+</head>
+<body>
+  <section class="wrapper">
+    <h1>Slide Right and Left</h1>
+    <div class="item right">Right</div>
+    <div class="item left">Left</div>
+    <div class="item bottom">Bottom</div>
+    <div class="item top">Top</div>
+    <h1>flip</h1>
+    <div class="item flipTop fast">Flip Top</div>
+    <div class="item flipBottom fast">Flip Bottom</div>
+    <div class="item flipLeft fast">Flip Left</div>
+    <div class="item flipLeft fast">Flip Left</div>
+    <div class="item flipRight fast">Flip Right</div>
+    <div class="item flipRight fast">Flip Right</div>
+    <h1>Rotate</h1>
+    <div class="item rotateRight">Rotate Right</div>
+    <div class="item rotateLeft">Rotate Light</div>
+    <h1>Zoom</h1>
+    <div class="item zoomIn fast">ZoomIn</div>
+    <div class="item zoomY fast">zoomY</div>
+    <div class="item zoomX fast">zoomX</div>
+    <div class="item zoomOut fast">zoomOut</div>
+    <div class="item zoomRight fast">zoomRight</div>
+    <div class="item zoomLeft fast">zoomRight</div>
+    <div class="item zoomBottom fast">zoomBottom</div>
+    <div class="item zoomTop fast">zoomTop</div>
+    <h1>Demo</h1>
+    <div class="item right fast">10</div>
+    <div class="item left fast">11</div>
+    <div class="item zoomY fast">12</div>
+    <div class="item zoomOut fast">13</div>
+    <div class="item zoomIn fast">14</div>
+    <div class="item flipBottom">15</div>
+    <div class="item zoomIn">16</div>
+    <div class="item rotateRight">17</div>
+    <div class="item bottom">18</div>
+  </section>
+
+  <!-- script -->
+  <script>
+    let item = document.querySelectorAll('.item');
+    window.addEventListener('load',() => {
+      item.forEach(el => {
+        if(el.getBoundingClientRect().top < window.innerHeight ){
+          el.classList.add('center');
+        }
+      })
+    })
+    item.forEach((element , i) => {
+      window.addEventListener('scroll', () => {
+        let window_height = window.innerHeight - 150;
+          if(element.getBoundingClientRect().top < window_height ){
+            element.classList.add('center');
+          }
+          else{
+            element.classList.remove('center');
+          }
+      })
+    })
+  </script>
+
+</body>
+</html>
